@@ -1,0 +1,842 @@
+{
+    "Windows Defender Cache Maintenance":  {
+                                               "taskpath":  "\\Microsoft\\Windows\\Windows Defender\\",
+                                               "arguments":  "-IdleTask -TaskName WdCacheMaintenance",
+                                               "execute":  "C:\\ProgramData\\Microsoft\\Windows Defender\\platform\\4.18.2102.4-0\\MpCmdRun.exe"
+                                           },
+    "BitLocker Encrypt All Drives":  {
+                                         "execute":  "C:\\WINDOWS\\System32\\edptask.dll",
+                                         "taskpath":  "\\Microsoft\\Windows\\BitLocker\\"
+                                     },
+    ".NET Framework NGEN v4.0.30319 64":  {
+                                              "execute":  "C:\\Windows\\System32\\mscoree.dll",
+                                              "taskpath":  "\\Microsoft\\Windows\\.NET Framework\\"
+                                          },
+    "Device Install Reboot Required":  {
+                                           "execute":  "C:\\Windows\\System32\\pnpui.dll",
+                                           "taskpath":  "\\Microsoft\\Windows\\Plug and Play\\"
+                                       },
+    "ForceSynchronizeTime":  {
+                                 "execute":  "C:\\WINDOWS\\system32\\TimeSyncTask.dll",
+                                 "taskpath":  "\\Microsoft\\Windows\\Time Synchronization\\"
+                             },
+    "WIM-Hash-Management":  {
+                                "execute":  "C:\\WINDOWS\\system32\\WofTasks.dll",
+                                "taskpath":  "\\Microsoft\\Windows\\WOF\\"
+                            },
+    "PolicyConverter":  {
+                            "execute":  "%windir%\\system32\\appidpolicyconverter.exe",
+                            "taskpath":  "\\Microsoft\\Windows\\AppID\\"
+                        },
+    "Windows Defender Scheduled Scan":  {
+                                            "taskpath":  "\\Microsoft\\Windows\\Windows Defender\\",
+                                            "arguments":  "Scan -ScheduleJob -ScanTrigger 55 -IdleScheduledJob",
+                                            "execute":  "C:\\ProgramData\\Microsoft\\Windows Defender\\platform\\4.18.2102.4-0\\MpCmdRun.exe"
+                                        },
+    "Interactive":  {
+                        "execute":  "C:\\WINDOWS\\system32\\wdc.dll",
+                        "taskpath":  "\\Microsoft\\Windows\\Task Manager\\"
+                    },
+    "OneDrive Standalone Update Task-S-1-5-21-921566831-3611186360-1917773840-1001":  {
+                                                                                          "execute":  "%localappdata%\\Microsoft\\OneDrive\\OneDriveStandaloneUpdater.exe",
+                                                                                          "taskpath":  "\\"
+                                                                                      },
+    "FamilySafetyRefreshTask":  {
+                                    "execute":  "C:\\WINDOWS\\System32\\WpcRefreshTask.dll",
+                                    "taskpath":  "\\Microsoft\\Windows\\Shell\\"
+                                },
+    "WiFiTask":  {
+                     "execute":  "%SystemRoot%\\System32\\WiFiTask.exe",
+                     "taskpath":  "\\Microsoft\\Windows\\WCM\\"
+                 },
+    "ReconcileFeatures":  {
+                              "execute":  "C:\\Windows\\System32\\fcon.dll",
+                              "taskpath":  "\\Microsoft\\Windows\\Flighting\\FeatureConfig\\"
+                          },
+    "HandleCommand":  {
+                          "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                      },
+    "UserTask-Roam":  {
+                          "execute":  "C:\\WINDOWS\\system32\\dimsjob.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\CertificateServicesClient\\"
+                      },
+    "LocateCommandUserSession":  {
+                                     "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                                     "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                                 },
+    "MobilityManager":  {
+                            "execute":  "C:\\WINDOWS\\system32\\rasmbmgr.dll",
+                            "taskpath":  "\\Microsoft\\Windows\\Ras\\"
+                        },
+    "NetworkStateChangeTask":  {
+                                   "execute":  "C:\\WINDOWS\\system32\\SettingSyncCore.dll",
+                                   "taskpath":  "\\Microsoft\\Windows\\SettingSync\\"
+                               },
+    "Tpm-HASCertRetr":  {
+                            "execute":  "C:\\WINDOWS\\system32\\TpmTasks.dll",
+                            "taskpath":  "\\Microsoft\\Windows\\TPM\\"
+                        },
+    "WakeUpAndScanForUpdates":  {
+                                    "execute":  "C:\\Windows\\System32\\InstallServiceTasks.dll",
+                                    "taskpath":  "\\Microsoft\\Windows\\InstallService\\"
+                                },
+    "MicrosoftEdgeUpdateTaskMachineUA":  {
+                                             "taskpath":  "\\",
+                                             "arguments":  "/ua /installsource scheduler",
+                                             "execute":  "C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe"
+                                         },
+    "Data Integrity Scan":  {
+                                "execute":  "C:\\Windows\\System32\\discan.dll",
+                                "taskpath":  "\\Microsoft\\Windows\\Data Integrity Scan\\"
+                            },
+    "Pre-staged app cleanup":  {
+                                   "taskpath":  "\\Microsoft\\Windows\\AppxDeploymentClient\\",
+                                   "arguments":  "%windir%\\system32\\AppxDeploymentClient.dll,AppxPreStageCleanupRunTask",
+                                   "execute":  "%windir%\\system32\\rundll32.exe"
+                               },
+    "GatherNetworkInfo":  {
+                              "execute":  "%windir%\\system32\\gatherNetworkInfo.vbs",
+                              "taskpath":  "\\Microsoft\\Windows\\NetTrace\\"
+                          },
+    "MicrosoftEdgeUpdateTaskMachineCore":  {
+                                               "taskpath":  "\\",
+                                               "arguments":  "/c",
+                                               "execute":  "C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe"
+                                           },
+    "Device User":  {
+                        "taskpath":  "\\Microsoft\\Windows\\Device Information\\",
+                        "arguments":  "UserCxt",
+                        "execute":  "%windir%\\system32\\devicecensus.exe"
+                    },
+    "AD RMS Rights Policy Template Management (Manual)":  {
+                                                              "execute":  "C:\\WINDOWS\\system32\\msdrm.dll",
+                                                              "taskpath":  "\\Microsoft\\Windows\\Active Directory Rights Management Services Client\\"
+                                                          },
+    "dusmtask":  {
+                     "execute":  "%SystemRoot%\\System32\\dusmtask.exe",
+                     "taskpath":  "\\Microsoft\\Windows\\DUSM\\"
+                 },
+    "PerformRemediation":  {
+                               "execute":  "WaaSMedicSvc",
+                               "taskpath":  "\\Microsoft\\Windows\\WaaSMedic\\"
+                           },
+    "EDP App Launch Task":  {
+                                "execute":  "C:\\WINDOWS\\System32\\edptask.dll",
+                                "taskpath":  "\\Microsoft\\Windows\\EDP\\"
+                            },
+    "VerifyWinRE":  {
+                        "execute":  "C:\\WINDOWS\\System32\\ReAgentTask.dll",
+                        "taskpath":  "\\Microsoft\\Windows\\RecoveryEnvironment\\"
+                    },
+    "Synchronize Language Settings":  {
+                                          "execute":  "C:\\Windows\\System32\\CoreGlobConfig.dll",
+                                          "taskpath":  "\\Microsoft\\Windows\\International\\"
+                                      },
+    "Windows Defender Verification":  {
+                                          "taskpath":  "\\Microsoft\\Windows\\Windows Defender\\",
+                                          "arguments":  "-IdleTask -TaskName WdVerification",
+                                          "execute":  "C:\\ProgramData\\Microsoft\\Windows Defender\\platform\\4.18.2102.4-0\\MpCmdRun.exe"
+                                      },
+    "Secure-Boot-Update":  {
+                               "execute":  "C:\\WINDOWS\\system32\\TpmTasks.dll",
+                               "taskpath":  "\\Microsoft\\Windows\\PI\\"
+                           },
+    "Sysprep Generalize Drivers":  {
+                                       "taskpath":  "\\Microsoft\\Windows\\Plug and Play\\",
+                                       "arguments":  "6",
+                                       "execute":  "%SystemRoot%\\System32\\drvinst.exe"
+                                   },
+    "appuriverifierinstall":  {
+                                  "execute":  "%windir%\\system32\\AppHostRegistrationVerifier.exe",
+                                  "taskpath":  "\\Microsoft\\Windows\\ApplicationData\\"
+                              },
+    "Calibration Loader":  {
+                               "execute":  "C:\\Windows\\System32\\mscms.dll",
+                               "taskpath":  "\\Microsoft\\Windows\\WindowsColorSystem\\"
+                           },
+    "StorageSense":  {
+                         "execute":  "C:\\WINDOWS\\system32\\StorageUsage.dll",
+                         "taskpath":  "\\Microsoft\\Windows\\DiskFootprint\\"
+                     },
+    "FODCleanupTask":  {
+                           "execute":  "%WinDir%\\System32\\WinBioPlugIns\\FaceFodUninstaller.exe",
+                           "taskpath":  "\\Microsoft\\Windows\\HelloFace\\"
+                       },
+    "RefreshCache":  {
+                         "execute":  "C:\\Windows\\System32\\wosc.dll",
+                         "taskpath":  "\\Microsoft\\Windows\\Flighting\\OneSettings\\"
+                     },
+    "UsageDataReporting":  {
+                               "execute":  "C:\\Windows\\System32\\fcon.dll",
+                               "taskpath":  "\\Microsoft\\Windows\\Flighting\\FeatureConfig\\"
+                           },
+    "Report policies":  {
+                            "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                            "arguments":  "ReportPolicies",
+                            "execute":  "%systemroot%\\system32\\usoclient.exe"
+                        },
+    "SynchronizeTime":  {
+                            "taskpath":  "\\Microsoft\\Windows\\Time Synchronization\\",
+                            "arguments":  "start w32time task_started",
+                            "execute":  "%windir%\\system32\\sc.exe"
+                        },
+    "ProcessMemoryDiagnosticEvents":  {
+                                          "execute":  "C:\\WINDOWS\\System32\\MemoryDiagnostic.dll",
+                                          "taskpath":  "\\Microsoft\\Windows\\MemoryDiagnostic\\"
+                                      },
+    ".NET Framework NGEN v4.0.30319 64 Critical":  {
+                                                       "execute":  "C:\\Windows\\System32\\mscoree.dll",
+                                                       "taskpath":  "\\Microsoft\\Windows\\.NET Framework\\"
+                                                   },
+    "AikCertEnrollTask":  {
+                              "execute":  "C:\\WINDOWS\\system32\\ngctasks.dll",
+                              "taskpath":  "\\Microsoft\\Windows\\CertificateServicesClient\\"
+                          },
+    "EDP Inaccessible Credentials Task":  {
+                                              "execute":  "C:\\WINDOWS\\System32\\edptask.dll",
+                                              "taskpath":  "\\Microsoft\\Windows\\EDP\\"
+                                          },
+    "Logon Synchronization":  {
+                                  "execute":  "C:\\WINDOWS\\System32\\cscui.dll",
+                                  "taskpath":  "\\Microsoft\\Windows\\Offline Files\\"
+                              },
+    "UpdateConfiguration_S-1-5-21-921566831-3611186360-1917773840-1001":  {
+                                                                              "execute":  "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\resources\\app\\ServiceHub\\Services\\Microsoft.VisualStudio.Setup.Service\\VSIXConfigurationUpdater.exe",
+                                                                              "taskpath":  "\\Microsoft\\VisualStudio\\Updates\\"
+                                                                          },
+    "FamilySafetyMonitor":  {
+                                "execute":  "%windir%\\System32\\wpcmon.exe",
+                                "taskpath":  "\\Microsoft\\Windows\\Shell\\"
+                            },
+    "MNO Metadata Parser":  {
+                                "execute":  "%SystemRoot%\\System32\\MbaeParserTask.exe",
+                                "taskpath":  "\\Microsoft\\Windows\\Mobile Broadband Accounts\\"
+                            },
+    "UPnPHostConfig":  {
+                           "taskpath":  "\\Microsoft\\Windows\\UPnP\\",
+                           "arguments":  "config upnphost start= auto",
+                           "execute":  "sc.exe"
+                       },
+    ".NET Framework NGEN v4.0.30319":  {
+                                           "execute":  "C:\\Windows\\System32\\mscoree.dll",
+                                           "taskpath":  "\\Microsoft\\Windows\\.NET Framework\\"
+                                       },
+    "Reboot_Battery":  {
+                           "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                           "arguments":  "/RunOnBattery RebootDialog",
+                           "execute":  "%systemroot%\\system32\\MusNotification.exe"
+                       },
+    "DsSvcCleanup":  {
+                         "execute":  "%windir%\\system32\\dstokenclean.exe",
+                         "taskpath":  "\\Microsoft\\Windows\\ApplicationData\\"
+                     },
+    "ExploitGuard MDM policy Refresh":  {
+                                            "execute":  "C:\\WINDOWS\\System32\\MitigationConfiguration.dll",
+                                            "taskpath":  "\\Microsoft\\Windows\\ExploitGuard\\"
+                                        },
+    "RecommendedTroubleshootingScanner":  {
+                                              "execute":  "C:\\WINDOWS\\System32\\MitigationClient.dll",
+                                              "taskpath":  "\\Microsoft\\Windows\\Diagnosis\\"
+                                          },
+    "RegisterDevicePolicyChange":  {
+                                       "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                                       "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                                   },
+    "SvcRestartTaskNetwork":  {
+                                  "execute":  "C:\\WINDOWS\\System32\\sppcext.dll",
+                                  "taskpath":  "\\Microsoft\\Windows\\SoftwareProtectionPlatform\\"
+                              },
+    "LocalUserSyncDataAvailable":  {
+                                       "execute":  "C:\\Windows\\System32\\InputCloudStore.dll",
+                                       "taskpath":  "\\Microsoft\\Windows\\Input\\"
+                                   },
+    "RunOnReboot":  {
+                        "taskpath":  "\\Microsoft\\Windows\\Management\\Provisioning\\",
+                        "arguments":  "/turn 5 /source ContinueSessionTask",
+                        "execute":  "%windir%\\system32\\ProvTool.exe"
+                    },
+    "StartComponentCleanup":  {
+                                  "execute":  "Trusted Installer Service",
+                                  "taskpath":  "\\Microsoft\\Windows\\Servicing\\"
+                              },
+    "TouchpadSyncDataAvailable":  {
+                                      "execute":  "C:\\Windows\\System32\\InputCloudStore.dll",
+                                      "taskpath":  "\\Microsoft\\Windows\\Input\\"
+                                  },
+    "Schedule Scan":  {
+                          "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                          "arguments":  "StartScan",
+                          "execute":  "%systemroot%\\system32\\usoclient.exe"
+                      },
+    "TempSignedLicenseExchange":  {
+                                      "execute":  "C:\\Windows\\System32\\TempSignedLicenseExchangeTask.dll",
+                                      "taskpath":  "\\Microsoft\\Windows\\License Manager\\"
+                                  },
+    "RunFullMemoryDiagnostic":  {
+                                    "execute":  "C:\\WINDOWS\\System32\\MemoryDiagnostic.dll",
+                                    "taskpath":  "\\Microsoft\\Windows\\MemoryDiagnostic\\"
+                                },
+    "Microsoft Compatibility Appraiser":  {
+                                              "execute":  "%windir%\\system32\\compattelrunner.exe",
+                                              "taskpath":  "\\Microsoft\\Windows\\Application Experience\\"
+                                          },
+    "SynchronizeTimeZone":  {
+                                "execute":  "%windir%\\system32\\tzsync.exe",
+                                "taskpath":  "\\Microsoft\\Windows\\Time Zone\\"
+                            },
+    "File History (maintenance mode)":  {
+                                            "execute":  "C:\\WINDOWS\\System32\\fhtask.dll",
+                                            "taskpath":  "\\Microsoft\\Windows\\FileHistory\\"
+                                        },
+    "DirectXDatabaseUpdater":  {
+                                   "execute":  "%windir%\\system32\\directxdatabaseupdater.exe",
+                                   "taskpath":  "\\Microsoft\\Windows\\DirectX\\"
+                               },
+    "ProactiveScan":  {
+                          "execute":  "C:\\Windows\\System32\\pstask.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\Chkdsk\\"
+                      },
+    "DmClient":  {
+                     "execute":  "%windir%\\system32\\dmclient.exe",
+                     "taskpath":  "\\Microsoft\\Windows\\Feedback\\Siuf\\"
+                 },
+    "ResPriStaticDbSync":  {
+                               "execute":  "C:\\WINDOWS\\system32\\sysmain.dll",
+                               "taskpath":  "\\Microsoft\\Windows\\Sysmain\\"
+                           },
+    "CDSSync":  {
+                    "execute":  "C:\\Windows\\System32\\WiFiCloudStore.dll",
+                    "taskpath":  "\\Microsoft\\Windows\\WlanSvc\\"
+                },
+    "IntegrityCheck":  {
+                           "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                           "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                       },
+    "EDP Auth Task":  {
+                          "execute":  "C:\\WINDOWS\\System32\\edptask.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\EDP\\"
+                      },
+    "MouseSyncDataAvailable":  {
+                                   "execute":  "C:\\Windows\\System32\\InputCloudStore.dll",
+                                   "taskpath":  "\\Microsoft\\Windows\\Input\\"
+                               },
+    "BackgroundUploadTask":  {
+                                 "execute":  "C:\\WINDOWS\\system32\\SettingSyncCore.dll",
+                                 "taskpath":  "\\Microsoft\\Windows\\SettingSync\\"
+                             },
+    "Registration":  {
+                         "taskpath":  "\\Microsoft\\Windows\\PushToInstall\\",
+                         "arguments":  "start pushtoinstall registration",
+                         "execute":  "%windir%\\system32\\sc.exe"
+                     },
+    "Sqm-Tasks":  {
+                      "execute":  "C:\\WINDOWS\\system32\\TpmTasks.dll",
+                      "taskpath":  "\\Microsoft\\Windows\\PI\\"
+                  },
+    "Account Cleanup":  {
+                            "taskpath":  "\\Microsoft\\Windows\\SharedPC\\",
+                            "arguments":  "%windir%\\System32\\Windows.SharedPC.AccountManager.dll,StartMaintenance",
+                            "execute":  "%windir%\\System32\\rundll32.exe"
+                        },
+    "ScheduledDefrag":  {
+                            "taskpath":  "\\Microsoft\\Windows\\Defrag\\",
+                            "arguments":  "-c -h -o -$",
+                            "execute":  "%windir%\\system32\\defrag.exe"
+                        },
+    "Data Integrity Check And Scan":  {
+                                          "execute":  "C:\\Windows\\System32\\discan.dll",
+                                          "taskpath":  "\\Microsoft\\Windows\\Data Integrity Scan\\"
+                                      },
+    "MapsToastTask":  {
+                          "execute":  "C:\\WINDOWS\\System32\\mapstoasttask.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\Maps\\"
+                      },
+    "RegisterUserDevice":  {
+                               "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                               "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                           },
+    "CleanupTemporaryState":  {
+                                  "taskpath":  "\\Microsoft\\Windows\\ApplicationData\\",
+                                  "arguments":  "Windows.Storage.ApplicationData.dll,CleanupTemporaryState",
+                                  "execute":  "%windir%\\system32\\rundll32.exe"
+                              },
+    "Reboot_AC":  {
+                      "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                      "arguments":  "/RunOnAC RebootDialog",
+                      "execute":  "%systemroot%\\system32\\MusNotification.exe"
+                  },
+    "RemoteAssistanceTask":  {
+                                 "taskpath":  "\\Microsoft\\Windows\\RemoteAssistance\\",
+                                 "arguments":  "/offerraupdate",
+                                 "execute":  "%windir%\\system32\\RAServer.exe"
+                             },
+    "Consolidator":  {
+                         "execute":  "%SystemRoot%\\System32\\wsqmcons.exe",
+                         "taskpath":  "\\Microsoft\\Windows\\Customer Experience Improvement Program\\"
+                     },
+    "XblGameSaveTask":  {
+                            "taskpath":  "\\Microsoft\\XblGameSave\\",
+                            "arguments":  "standby",
+                            "execute":  "%windir%\\System32\\XblGameSaveTask.exe"
+                        },
+    "WinSAT":  {
+                   "execute":  "C:\\WINDOWS\\system32\\WinSATAPI.dll",
+                   "taskpath":  "\\Microsoft\\Windows\\Maintenance\\"
+               },
+    "Notifications":  {
+                          "execute":  "%windir%\\System32\\LocationNotificationWindows.exe",
+                          "taskpath":  "\\Microsoft\\Windows\\Location\\"
+                      },
+    "RegIdleBackup":  {
+                          "execute":  "C:\\WINDOWS\\System32\\regidle.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\Registry\\"
+                      },
+    "Data Integrity Scan for Crash Recovery":  {
+                                                   "execute":  "C:\\Windows\\System32\\discan.dll",
+                                                   "taskpath":  "\\Microsoft\\Windows\\Data Integrity Scan\\"
+                                               },
+    "QueueReporting":  {
+                           "taskpath":  "\\Microsoft\\Windows\\Windows Error Reporting\\",
+                           "arguments":  "-upload",
+                           "execute":  "%windir%\\system32\\wermgr.exe"
+                       },
+    "UsageDataFlushing":  {
+                              "execute":  "C:\\Windows\\System32\\fcon.dll",
+                              "taskpath":  "\\Microsoft\\Windows\\Flighting\\FeatureConfig\\"
+                          },
+    "HybridDriveCacheRebalance":  {
+                                      "execute":  "C:\\WINDOWS\\system32\\sysmain.dll",
+                                      "taskpath":  "\\Microsoft\\Windows\\Sysmain\\"
+                                  },
+    "Windows Defender Cleanup":  {
+                                     "taskpath":  "\\Microsoft\\Windows\\Windows Defender\\",
+                                     "arguments":  "-IdleTask -TaskName WdCleanup",
+                                     "execute":  "C:\\ProgramData\\Microsoft\\Windows Defender\\platform\\4.18.2102.4-0\\MpCmdRun.exe"
+                                 },
+    "SR":  {
+               "taskpath":  "\\Microsoft\\Windows\\SystemRestore\\",
+               "arguments":  "ExecuteScheduledSPPCreation",
+               "execute":  "%windir%\\system32\\srtasks.exe"
+           },
+    "StorageCardEncryption Task":  {
+                                       "execute":  "C:\\WINDOWS\\System32\\edptask.dll",
+                                       "taskpath":  "\\Microsoft\\Windows\\EDP\\"
+                                   },
+    "Microsoft-Windows-DiskDiagnosticDataCollector":  {
+                                                          "taskpath":  "\\Microsoft\\Windows\\DiskDiagnostic\\",
+                                                          "arguments":  "dfdts.dll,DfdGetDefaultPolicyAndSMART",
+                                                          "execute":  "%windir%\\system32\\rundll32.exe"
+                                                      },
+    "ProgramDataUpdater":  {
+                               "taskpath":  "\\Microsoft\\Windows\\Application Experience\\",
+                               "arguments":  "-maintenance",
+                               "execute":  "%windir%\\system32\\compattelrunner.exe"
+                           },
+    "Schedule Scan Static Task":  {
+                                      "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                                      "arguments":  "StartScan",
+                                      "execute":  "%systemroot%\\system32\\usoclient.exe"
+                                  },
+    "appuriverifierdaily":  {
+                                "execute":  "%windir%\\system32\\AppHostRegistrationVerifier.exe",
+                                "taskpath":  "\\Microsoft\\Windows\\ApplicationData\\"
+                            },
+    "Storage Tiers Optimization":  {
+                                       "taskpath":  "\\Microsoft\\Windows\\Storage Tiers Management\\",
+                                       "arguments":  "-c -h -g -# -m 8 -i 13500",
+                                       "execute":  "%windir%\\system32\\defrag.exe"
+                                   },
+    "Schedule Work":  {
+                          "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                          "arguments":  "StartWork",
+                          "execute":  "%systemroot%\\system32\\usoclient.exe"
+                      },
+    "SystemSoundsService":  {
+                                "execute":  "C:\\WINDOWS\\System32\\PlaySndSrv.dll",
+                                "taskpath":  "\\Microsoft\\Windows\\Multimedia\\"
+                            },
+    "RegisterDeviceProtectionStateChanged":  {
+                                                 "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                                                 "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                                             },
+    "CacheTask":  {
+                      "execute":  "C:\\WINDOWS\\system32\\wininet.dll",
+                      "taskpath":  "\\Microsoft\\Windows\\Wininet\\"
+                  },
+    "StartupAppTask":  {
+                           "taskpath":  "\\Microsoft\\Windows\\Application Experience\\",
+                           "arguments":  "Startupscan.dll,SusRunTask",
+                           "execute":  "%windir%\\system32\\rundll32.exe"
+                       },
+    "Background Synchronization":  {
+                                       "execute":  "C:\\WINDOWS\\System32\\cscui.dll",
+                                       "taskpath":  "\\Microsoft\\Windows\\Offline Files\\"
+                                   },
+    "PcaPatchDbTask":  {
+                           "taskpath":  "\\Microsoft\\Windows\\Application Experience\\",
+                           "arguments":  "%windir%\\system32\\PcaSvc.dll,PcaPatchSdbTask",
+                           "execute":  "%windir%\\system32\\rundll32.exe"
+                       },
+    "SpaceManagerTask":  {
+                             "taskpath":  "\\Microsoft\\Windows\\SpacePort\\",
+                             "arguments":  "/Work",
+                             "execute":  "%windir%\\system32\\spaceman.exe"
+                         },
+    "ScanForUpdatesAsUser":  {
+                                 "execute":  "C:\\Windows\\System32\\InstallServiceTasks.dll",
+                                 "taskpath":  "\\Microsoft\\Windows\\InstallService\\"
+                             },
+    "HybridDriveCachePrepopulate":  {
+                                        "execute":  "C:\\WINDOWS\\system32\\sysmain.dll",
+                                        "taskpath":  "\\Microsoft\\Windows\\Sysmain\\"
+                                    },
+    "Device":  {
+                   "taskpath":  "\\Microsoft\\Windows\\Device Information\\",
+                   "arguments":  "SystemCxt",
+                   "execute":  "%windir%\\system32\\devicecensus.exe"
+               },
+    "MaintenanceTasks":  {
+                             "taskpath":  "\\Microsoft\\Windows\\StateRepository\\",
+                             "arguments":  "%windir%\\system32\\Windows.StateRepositoryClient.dll,StateRepositoryDoMaintenanceTasks",
+                             "execute":  "%windir%\\system32\\rundll32.exe"
+                         },
+    "LPRemove":  {
+                     "execute":  "%windir%\\system32\\lpremove.exe",
+                     "taskpath":  "\\Microsoft\\Windows\\MUI\\"
+                 },
+    "DXGIAdapterCache":  {
+                             "execute":  "%windir%\\system32\\dxgiadaptercache.exe",
+                             "taskpath":  "\\Microsoft\\Windows\\DirectX\\"
+                         },
+    "HiveUploadTask":  {
+                           "execute":  "User Profile Service DCOM server",
+                           "taskpath":  "\\Microsoft\\Windows\\User Profile Service\\"
+                       },
+    "SyspartRepair":  {
+                          "taskpath":  "\\Microsoft\\Windows\\Chkdsk\\",
+                          "arguments":  "%windir% /sysrepair",
+                          "execute":  "%windir%\\system32\\bcdboot.exe"
+                      },
+    "CreateObjectTask":  {
+                             "execute":  "C:\\WINDOWS\\system32\\shell32.dll",
+                             "taskpath":  "\\Microsoft\\Windows\\Shell\\"
+                         },
+    "Metadata Refresh":  {
+                             "execute":  "C:\\WINDOWS\\System32\\DeviceSetupManagerAPI.dll",
+                             "taskpath":  "\\Microsoft\\Windows\\Device Setup\\"
+                         },
+    "HandleWnsCommand":  {
+                             "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                             "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                         },
+    "Storage Tiers Management Initialization":  {
+                                                    "execute":  "C:\\Windows\\System32\\TieringEngineService.exe",
+                                                    "taskpath":  "\\Microsoft\\Windows\\Storage Tiers Management\\"
+                                                },
+    "MapsUpdateTask":  {
+                           "execute":  "C:\\WINDOWS\\System32\\mapsupdatetask.dll",
+                           "taskpath":  "\\Microsoft\\Windows\\Maps\\"
+                       },
+    "EDP Policy Manager":  {
+                               "execute":  "C:\\WINDOWS\\System32\\AppLockerCsp.dll",
+                               "taskpath":  "\\Microsoft\\Windows\\AppID\\"
+                           },
+    "RunUpdateNotificationMgr":  {
+                                     "execute":  "%windir%\\System32\\UNP\\UpdateNotificationMgr.exe",
+                                     "taskpath":  "\\Microsoft\\Windows\\UNP\\"
+                                 },
+    "SmartRetry":  {
+                       "execute":  "C:\\Windows\\System32\\InstallServiceTasks.dll",
+                       "taskpath":  "\\Microsoft\\Windows\\InstallService\\"
+                   },
+    "RegisterDeviceLocationRightsChange":  {
+                                               "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                                               "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                                           },
+    "Device-Sync":  {
+                        "execute":  "C:\\Windows\\System32\\dsregtask.dll",
+                        "taskpath":  "\\Microsoft\\Windows\\Workplace Join\\"
+                    },
+    "Automatic-Device-Join":  {
+                                  "taskpath":  "\\Microsoft\\Windows\\Workplace Join\\",
+                                  "arguments":  "$(Arg0) $(Arg1) $(Arg2)",
+                                  "execute":  "%SystemRoot%\\System32\\dsregcmd.exe"
+                              },
+    ".NET Framework NGEN v4.0.30319 Critical":  {
+                                                    "execute":  "C:\\Windows\\System32\\mscoree.dll",
+                                                    "taskpath":  "\\Microsoft\\Windows\\.NET Framework\\"
+                                                },
+    "CryptoPolicyTask":  {
+                             "execute":  "C:\\WINDOWS\\system32\\ngctasks.dll",
+                             "taskpath":  "\\Microsoft\\Windows\\CertificateServicesClient\\"
+                         },
+    "Usb-Notifications":  {
+                              "execute":  "C:\\Windows\\System32\\UsbTask.dll",
+                              "taskpath":  "\\Microsoft\\Windows\\USB\\"
+                          },
+    "UpdateUserPictureTask":  {
+                                  "execute":  "C:\\Windows\\System32\\Windows.UI.Immersive.dll",
+                                  "taskpath":  "\\Microsoft\\Windows\\Shell\\"
+                              },
+    "License Validation":  {
+                               "taskpath":  "\\Microsoft\\Windows\\Clip\\",
+                               "arguments":  "-p -s -o",
+                               "execute":  "%SystemRoot%\\system32\\ClipUp.exe"
+                           },
+    "VerifiedPublisherCertStoreCheck":  {
+                                            "execute":  "%windir%\\system32\\appidcertstorecheck.exe",
+                                            "taskpath":  "\\Microsoft\\Windows\\AppID\\"
+                                        },
+    "Logon":  {
+                  "taskpath":  "\\Microsoft\\Windows\\Management\\Provisioning\\",
+                  "arguments":  "/turn 5 /source LogonIdleTask",
+                  "execute":  "%windir%\\system32\\ProvTool.exe"
+              },
+    "SvcRestartTaskLogon":  {
+                                "execute":  "C:\\WINDOWS\\System32\\sppcext.dll",
+                                "taskpath":  "\\Microsoft\\Windows\\SoftwareProtectionPlatform\\"
+                            },
+    "IndexerAutomaticMaintenance":  {
+                                        "execute":  "C:\\WINDOWS\\System32\\srchadmin.dll",
+                                        "taskpath":  "\\Microsoft\\Windows\\Shell\\"
+                                    },
+    "UpdateModelTask":  {
+                            "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                            "arguments":  "StartModelUpdates",
+                            "execute":  "%systemroot%\\system32\\usoclient.exe"
+                        },
+    "LoginCheck":  {
+                       "taskpath":  "\\Microsoft\\Windows\\PushToInstall\\",
+                       "arguments":  "start pushtoinstall login",
+                       "execute":  "%windir%\\system32\\sc.exe"
+                   },
+    "BitLocker MDM policy Refresh":  {
+                                         "execute":  "C:\\WINDOWS\\System32\\edptask.dll",
+                                         "taskpath":  "\\Microsoft\\Windows\\BitLocker\\"
+                                     },
+    "SystemTask":  {
+                       "execute":  "C:\\WINDOWS\\system32\\dimsjob.dll",
+                       "taskpath":  "\\Microsoft\\Windows\\CertificateServicesClient\\"
+                   },
+    "USO_UxBroker":  {
+                         "execute":  "%systemroot%\\system32\\MusNotification.exe",
+                         "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\"
+                     },
+    "PenSyncDataAvailable":  {
+                                 "execute":  "C:\\Windows\\System32\\InputCloudStore.dll",
+                                 "taskpath":  "\\Microsoft\\Windows\\Input\\"
+                             },
+    "ScanForUpdates":  {
+                           "execute":  "C:\\Windows\\System32\\InstallServiceTasks.dll",
+                           "taskpath":  "\\Microsoft\\Windows\\InstallService\\"
+                       },
+    "Work Folders Maintenance Work":  {
+                                          "execute":  "C:\\Windows\\System32\\WorkFoldersShell.dll",
+                                          "taskpath":  "\\Microsoft\\Windows\\Work Folders\\"
+                                      },
+    "BfeOnServiceStartTypeChange":  {
+                                        "taskpath":  "\\Microsoft\\Windows\\Windows Filtering Platform\\",
+                                        "arguments":  "bfe.dll,BfeOnServiceStartTypeChange",
+                                        "execute":  "%windir%\\system32\\rundll32.exe"
+                                    },
+    "Microsoft-Windows-DiskDiagnosticResolver":  {
+                                                     "execute":  "%windir%\\system32\\DFDWiz.exe",
+                                                     "taskpath":  "\\Microsoft\\Windows\\DiskDiagnostic\\"
+                                                 },
+    "UninstallDeviceTask":  {
+                                "taskpath":  "\\Microsoft\\Windows\\Bluetooth\\",
+                                "arguments":  "$(Arg0)",
+                                "execute":  "BthUdTask.exe"
+                            },
+    "ReconcileLanguageResources":  {
+                                       "execute":  "LxpSvc",
+                                       "taskpath":  "\\Microsoft\\Windows\\LanguageComponentsInstaller\\"
+                                   },
+    "Uninstallation":  {
+                           "execute":  "C:\\Windows\\System32\\LanguageComponentsInstaller.dll",
+                           "taskpath":  "\\Microsoft\\Windows\\LanguageComponentsInstaller\\"
+                       },
+    "Retry":  {
+                  "taskpath":  "\\Microsoft\\Windows\\Management\\Provisioning\\",
+                  "arguments":  "/turn 5 /source ProvRetryTask",
+                  "execute":  "%windir%\\system32\\ProvTool.exe"
+              },
+    "Device Install Group Policy":  {
+                                        "execute":  "C:\\Windows\\System32\\pnppolicy.dll",
+                                        "taskpath":  "\\Microsoft\\Windows\\Plug and Play\\"
+                                    },
+    "VSIX Auto Update":  {
+                             "execute":  "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\resources\\app\\ServiceHub\\Services\\Microsoft.VisualStudio.Setup.Service\\VSIXAutoUpdate.exe",
+                             "taskpath":  "\\Microsoft\\VisualStudio\\"
+                         },
+    "UserTask":  {
+                     "execute":  "C:\\WINDOWS\\system32\\dimsjob.dll",
+                     "taskpath":  "\\Microsoft\\Windows\\CertificateServicesClient\\"
+                 },
+    "ResolutionHost":  {
+                           "execute":  "C:\\WINDOWS\\System32\\wdi.dll",
+                           "taskpath":  "\\Microsoft\\Windows\\WDI\\"
+                       },
+    "AnalyzeSystem":  {
+                          "execute":  "C:\\WINDOWS\\System32\\energytask.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\Power Efficiency Diagnostics\\"
+                      },
+    "WakeUpAndContinueUpdates":  {
+                                     "execute":  "C:\\Windows\\System32\\InstallServiceTasks.dll",
+                                     "taskpath":  "\\Microsoft\\Windows\\InstallService\\"
+                                 },
+    "Scheduled":  {
+                      "execute":  "C:\\WINDOWS\\System32\\sdiagschd.dll",
+                      "taskpath":  "\\Microsoft\\Windows\\Diagnosis\\"
+                  },
+    "Schedule Wake To Work":  {
+                                  "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                                  "arguments":  "StartWork",
+                                  "execute":  "%systemroot%\\system32\\usoclient.exe"
+                              },
+    "NotificationTask":  {
+                             "taskpath":  "\\Microsoft\\Windows\\WwanSvc\\",
+                             "arguments":  "wwan",
+                             "execute":  "%SystemRoot%\\System32\\WiFiTask.exe"
+                         },
+    "OobeDiscovery":  {
+                          "execute":  "C:\\Windows\\System32\\MBMediaManager.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\WwanSvc\\"
+                      },
+    "RegisterDevicePeriodic24":  {
+                                     "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                                     "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                                 },
+    "Work Folders Logon Synchronization":  {
+                                               "execute":  "C:\\Windows\\System32\\WorkFoldersShell.dll",
+                                               "taskpath":  "\\Microsoft\\Windows\\Work Folders\\"
+                                           },
+    "UsbCeip":  {
+                    "execute":  "C:\\WINDOWS\\System32\\usbceip.dll",
+                    "taskpath":  "\\Microsoft\\Windows\\Customer Experience Improvement Program\\"
+                },
+    "AD RMS Rights Policy Template Management (Automated)":  {
+                                                                 "execute":  "C:\\WINDOWS\\system32\\msdrm.dll",
+                                                                 "taskpath":  "\\Microsoft\\Windows\\Active Directory Rights Management Services Client\\"
+                                                             },
+    "WindowsActionDialog":  {
+                                "execute":  "%windir%\\System32\\WindowsActionDialog.exe",
+                                "taskpath":  "\\Microsoft\\Windows\\Location\\"
+                            },
+    "Schedule Maintenance Work":  {
+                                      "taskpath":  "\\Microsoft\\Windows\\UpdateOrchestrator\\",
+                                      "arguments":  "StartMaintenanceWork",
+                                      "execute":  "%systemroot%\\system32\\usoclient.exe"
+                                  },
+    "Tpm-Maintenance":  {
+                            "execute":  "C:\\WINDOWS\\system32\\TpmTasks.dll",
+                            "taskpath":  "\\Microsoft\\Windows\\TPM\\"
+                        },
+    "Scheduled Start":  {
+                            "taskpath":  "\\Microsoft\\Windows\\WindowsUpdate\\",
+                            "arguments":  "start wuauserv",
+                            "execute":  "C:\\WINDOWS\\system32\\sc.exe"
+                        },
+    "Cellular":  {
+                     "taskpath":  "\\Microsoft\\Windows\\Management\\Provisioning\\",
+                     "arguments":  "/turn 7 /source CellStateChangeTask",
+                     "execute":  "%windir%\\system32\\ProvTool.exe"
+                 },
+    "KeyPreGenTask":  {
+                          "execute":  "C:\\WINDOWS\\system32\\ngctasks.dll",
+                          "taskpath":  "\\Microsoft\\Windows\\CertificateServicesClient\\"
+                      },
+    "SpeechModelDownloadTask":  {
+                                    "execute":  "%windir%\\system32\\speech_onecore\\common\\SpeechModelDownload.exe",
+                                    "taskpath":  "\\Microsoft\\Windows\\Speech\\"
+                                },
+    "RemoteFXWarningTask":  {
+                                "taskpath":  "\\Microsoft\\Windows\\termsrv\\RemoteFX\\",
+                                "arguments":  "Warning",
+                                "execute":  "%windir%\\System32\\RemoteFXvGPUDisablement.exe"
+                            },
+    "Installation":  {
+                         "execute":  "C:\\Windows\\System32\\LanguageComponentsInstaller.dll",
+                         "taskpath":  "\\Microsoft\\Windows\\LanguageComponentsInstaller\\"
+                     },
+    "BgTaskRegistrationMaintenanceTask":  {
+                                              "execute":  "{E984D939-0E00-4DD9-AC3A-7ACA04745521}",
+                                              "taskpath":  "\\Microsoft\\Windows\\BrokerInfrastructure\\"
+                                          },
+    "WsSwapAssessmentTask":  {
+                                 "taskpath":  "\\Microsoft\\Windows\\Sysmain\\",
+                                 "arguments":  "sysmain.dll,PfSvWsSwapAssessmentTask",
+                                 "execute":  "%windir%\\system32\\rundll32.exe"
+                             },
+    "UpdateLibrary":  {
+                          "execute":  "\"%ProgramFiles%\\Windows Media Player\\wmpnscfg.exe\"",
+                          "taskpath":  "\\Microsoft\\Windows\\Windows Media Sharing\\"
+                      },
+    "SvcRestartTask":  {
+                           "execute":  "C:\\WINDOWS\\System32\\sppcext.dll",
+                           "taskpath":  "\\Microsoft\\Windows\\SoftwareProtectionPlatform\\"
+                       },
+    "MsCtfMonitor":  {
+                         "execute":  "C:\\WINDOWS\\system32\\MsCtfMonitor.dll",
+                         "taskpath":  "\\Microsoft\\Windows\\TextServicesFramework\\"
+                     },
+    "OneDrive Standalone Update Task-S-1-5-21-921566831-3611186360-1917773840-500":  {
+                                                                                         "execute":  "%localappdata%\\Microsoft\\OneDrive\\OneDriveStandaloneUpdater.exe",
+                                                                                         "taskpath":  "\\"
+                                                                                     },
+    "SpaceAgentTask":  {
+                           "execute":  "%windir%\\system32\\SpaceAgent.exe",
+                           "taskpath":  "\\Microsoft\\Windows\\SpacePort\\"
+                       },
+    "DmClientOnScenarioDownload":  {
+                                       "taskpath":  "\\Microsoft\\Windows\\Feedback\\Siuf\\",
+                                       "arguments":  "utcwnf",
+                                       "execute":  "%windir%\\system32\\dmclient.exe"
+                                   },
+    "SilentCleanup":  {
+                          "taskpath":  "\\Microsoft\\Windows\\DiskCleanup\\",
+                          "arguments":  "/autoclean /d %systemdrive%",
+                          "execute":  "%windir%\\system32\\cleanmgr.exe"
+                      },
+    "Diagnostics":  {
+                        "taskpath":  "\\Microsoft\\Windows\\DiskFootprint\\",
+                        "arguments":  "-z",
+                        "execute":  "%windir%\\system32\\disksnapshot.exe"
+                    },
+    "RegisterDeviceSettingChange":  {
+                                        "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                                        "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                                    },
+    "RegisterDeviceAccountChange":  {
+                                        "execute":  "C:\\WINDOWS\\system32\\DeviceDirectoryClient.dll",
+                                        "taskpath":  "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+                                    },
+    "RemoteFXvGPUDisableTask":  {
+                                    "taskpath":  "\\Microsoft\\Windows\\termsrv\\RemoteFX\\",
+                                    "arguments":  "Disable",
+                                    "execute":  "%windir%\\System32\\RemoteFXvGPUDisablement.exe"
+                                },
+    "Proxy":  {
+                  "taskpath":  "\\Microsoft\\Windows\\Autochk\\",
+                  "arguments":  "/d acproxy.dll,PerformAutochkOperations",
+                  "execute":  "%windir%\\system32\\rundll32.exe"
+              },
+    "EduPrintProv":  {
+                         "execute":  "%windir%\\system32\\eduprintprov.exe",
+                         "taskpath":  "\\Microsoft\\Windows\\Printing\\"
+                     },
+    "Property Definition Sync":  {
+                                     "execute":  "C:\\Windows\\System32\\srmclient.dll",
+                                     "taskpath":  "\\Microsoft\\Windows\\File Classification Infrastructure\\"
+                                 },
+    "WIM-Hash-Validation":  {
+                                "execute":  "C:\\WINDOWS\\system32\\WofTasks.dll",
+                                "taskpath":  "\\Microsoft\\Windows\\WOF\\"
+                            },
+    "Recovery-Check":  {
+                           "taskpath":  "\\Microsoft\\Windows\\Workplace Join\\",
+                           "arguments":  "/checkrecovery",
+                           "execute":  "%SystemRoot%\\System32\\dsregcmd.exe"
+                       }
+}
