@@ -5,7 +5,7 @@ $result = @{
 }
 $PATH = "C:\Temp\Windows Protection\"
 #logging
-if (!(Test-Path -Path "$($PATH)") -or (Test-Path -Path "$($PATH)Allow-tasks.json")) {
+if (!(Test-Path -Path "$($PATH)") -or !(Test-Path -Path "$($PATH)Allow-tasks.json")) {
     try {
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ParkHost/Windows_Security_Scripts/master/Check%20SCtask/Create-ScheduleTaskEvent.ps1'))
     } catch {

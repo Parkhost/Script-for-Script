@@ -62,9 +62,10 @@ Function Watch-ScheduledTaskEvents {
     $class = Get-CimClass MSFT_TaskEventTrigger root/Microsoft/Windows/TaskScheduler
     $trigger = $class | New-CimInstance -ClientOnly
     $trigger.Enabled = $true
-    $trigger.Subscription = '<QueryList><Query Id="0" Path="Security"><Select
+$trigger.Subscription = '<QueryList><Query Id="0"><Select
 Path="Security">*[System[Provider[@Name=''Microsoft-Windows-Security-Auditing''] and
-(EventID=4699 or EventID=4698 or EventID=4700 or EventID=4702)]] and *[EventData[Data[@Name=TaskName]!="\Action-ScheduleTask"]</Select></Query></QueryList>'
+(EventID=4699 or EventID=4698 or EventID=4700 or EventID=4702)]]</Select><Select
+Path="Security">*[EventData[Data[@Name=''TaskName'']!=''\Action-ScheduleTask'']]</Select></Query></QueryList>'
 
 
     # setting params and creating sctask
