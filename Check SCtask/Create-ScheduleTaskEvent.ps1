@@ -82,7 +82,7 @@ Path="Security">*[System[Provider[@Name=''Microsoft-Windows-Security-Auditing'']
         Trigger     = $Trigger
 
     }
-    Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/tree/master/Check%20SCtask/Action-ScheduleTask.ps1' -OutFile "$($PATH)$($TaskName).ps1"
+    Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/master/Check%20SCtask/Action-ScheduleTask.ps1' -OutFile "$($PATH)$($TaskName).ps1"
     Register-ScheduledTask @RegSchTaskParameters -Force > $null
 }
 
