@@ -67,7 +67,6 @@ Path="Security">*[System[Provider[@Name=''Microsoft-Windows-Security-Auditing'']
 (EventID=4699 or EventID=4698 or EventID=4700 or EventID=4702)]] and *[EventData[Data[@Name=TaskName]!="\Action-ScheduleTask"]</Select></Query></QueryList>'
 
 
-Data Name
     # setting params and creating sctask
     $ActionParameters = @{
         Execute  = 'C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe'
