@@ -42,7 +42,7 @@ function Get-AllowList {
         [Parameter(Mandatory = $true)] [String] $FilePath
     )
     $params = @{
-        uri     = "https://raw.githubusercontent.com/ParkHost/Windows_Security_Scripts/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
+        uri     = "https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/tree/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
         Outfile = "$($PATH)allow-tasks.json"
     }
     Try {
@@ -83,7 +83,7 @@ Data Name
         Trigger     = $Trigger
 
     }
-    Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/ParkHost/Windows_Security_Scripts/master/Check%20SCtask/Action-ScheduleTask.ps1' -OutFile "$($PATH)$($TaskName).ps1"
+    Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/tree/master/Check%20SCtask/Action-ScheduleTask.ps1' -OutFile "$($PATH)$($TaskName).ps1"
     Register-ScheduledTask @RegSchTaskParameters -Force > $null
 }
 

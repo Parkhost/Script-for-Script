@@ -71,7 +71,7 @@ Function Test-List {
     }
     else {
         $params = @{
-            uri     = "https://raw.githubusercontent.com/ParkHost/Windows_Security_Scripts/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
+            uri     = "https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/tree/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
             Outfile = $FilePath
         }
         Try {
