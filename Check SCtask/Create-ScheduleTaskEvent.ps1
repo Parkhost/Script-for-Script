@@ -43,7 +43,7 @@ function Get-AllowList {
     )
     $params = @{
         uri     = "https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/tree/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
-        Outfile = "$($PATH)allow-tasks.json"
+        Outfile = "$($PATH)allow_tasks.json"
     }
     Try {
         Invoke-RestMethod @params

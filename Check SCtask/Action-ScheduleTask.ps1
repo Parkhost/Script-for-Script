@@ -1,7 +1,6 @@
 #Requires -RunAsAdministrator
 $ErrorActionPreference = 'Stop'
 $result = @{
-    failed = $false
 }
 $PATH = "C:\Temp\Windows Protection\"
 #logging
@@ -53,8 +52,8 @@ Function New-TaskObj {
             }
         }
     }
-    $result[$task.taskname] = $obj
-    return $result
+    $taskObj[$task.taskname] = $obj
+    return $taskObj
 }
 
 Function Test-List {
@@ -87,7 +86,7 @@ Function Lock-ScheduleTask {
     param (
         [Parameter(Mandatory = $true)] [String] $FilePath # 'C:\Temp\PS_Security_features\Check SCtask\allow_tasks.json'
     )
-    if ($result.taskname -eq 'Action-ScheduleTask') {
+    if ($result.taskname -eq '\Action-ScheduleTask') {
         continue
     }
     try {
@@ -95,22 +94,15 @@ Function Lock-ScheduleTask {
         Get-ScheduledTask -TaskName $result.taskname.split('\')[-1] | Disable-ScheduledTask > $null
     }
     catch {
-        $result.failed = $true
-        $result.msg = "Failed to stop or disable the schedule task: $($Error[0])"
-        return $result
-        Exit 1
-        # kill switch
+        Throw "Failed to stop or disable the schedule task: $($Error[0])"
     }
     if (!(Test-Path -Path $FilePath)){
-        $result.failed = $true
-        $result.msg = 'Failed to find the authorized task list, please rerun the initial setup' + $Error[0]
-        return $result
-        Exit 1
+        Throw 'Failed to find the authorized task list, please rerun the initial setup' + $Error[0]
     } else {
         $file = ConvertFrom-Json -InputObject (Get-Content -Raw -Path $FilePath)
     }
     if ($file."$($result.taskname.split('\')[-1])") {
-        $current_obj = "$($result.taskname.split('\')[-1])"
+        $current_obj = $file."$($result.taskname.split('\')[-1])"
     }
     else {
         Get-ScheduledTask -TaskPath $taskPath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null
@@ -139,9 +131,6 @@ foreach ($row in $xml.Event.EventData.Data.GetEnumerator()) {
         else {
             $result.taskname = $row.'#text'
         }
-    }
-    else {
-        Throw "Failed to get the taskname, $($row)"
     }
 }
 
