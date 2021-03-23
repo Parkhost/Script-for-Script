@@ -1,15 +1,15 @@
-# Windows 10 protection scripts
+# Windows - a Script for a Script
+## Windows 'Protection' scripts
 some basic scripts to try 'counter' the attacks or detects vulnerabilities of your system.
 Trying to make Windows more secure, without eating all the resource which most AV's does..
 
 ---
 
 # Schedule task detection
-Check on event if schedule task is created or updated.
+Check on event if schedule task is created / updated or enabled.
 Kicks in another script which disables the tasks and checks if it is on the 'allow list'.
-Tried to disable all the scheduled tasks, some are 'Access is denied' as SYSTEM..
 
-## Info
+### Info
 One of the scheduled tasks gives only a guid back, with no 'human readable' syntax.
 I cannot find what this guid does nor where it referring to. 
 I would advice at least disable this task automatically or (better) delete it:
@@ -27,11 +27,10 @@ I would advice at least disable this task automatically or (better) delete it:
 }
 ```
 
-
 ## Setup
 Please run the following command **as administrator** in Windows Powershell:
 
-```ps
+```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/master/Check%20SCtask/Create-ScheduleTaskEvent.ps1'))
 ```
 
@@ -49,6 +48,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ---
 
 # CVE Mitre check
-Idea, get all application names and version numbers.
-Check this data against the CVE mitre database.
-Notice user if anything is detected
+Get all your installed applications with version.
+Do a check against the CVE Mitre database if any known vulnerabilities are present of the specific application with version.
+Give a report back to the user.
+
+- [x] Get all application names and version numbers.
+- [ ] Check the data against my CVE database.
+- [ ] Notice user if anything is detected (email or webpage).
