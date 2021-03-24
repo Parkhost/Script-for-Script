@@ -1,13 +1,12 @@
 #Requires -RunAsAdministrator
 $ErrorActionPreference = 'Stop'
-$result = @{
-}
+$result = @{}
 $taskObj = @{}
 $PATH = "C:\Temp\Windows Protection\"
 #logging
-if (!Test-Path -Path "$($PATH)Allow-tasks.json") {
+if (!(Test-Path -Path "$($PATH)Allow-tasks.json")) {
     try {
-        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ParkHost/Windows_Security_Scripts/master/Check%20SCtask/Create-ScheduleTaskEvent.ps1'))
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/master/Check%20SCtask/Create-ScheduleTaskEvent.ps1'))
     }
     catch {
         Throw "Failed to run the initial setup $($Error[0])"
@@ -102,7 +101,8 @@ Function Lock-ScheduleTask {
     # }
     try {
         $file = ConvertFrom-Json -InputObject (Get-Content -Raw -Path $FilePath)
-    } catch {
+    }
+    catch {
         Throw 'Failed to find the authorized task list, please rerun the initial setup' + $Error[0]
     }
     if ($file."$($result.taskname.split('\')[-1])") {
@@ -113,14 +113,14 @@ Function Lock-ScheduleTask {
         }
     }
     else {
-        Get-ScheduledTask -TaskPath $taskPath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null
+        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null
         continue
     }
     $object = New-TaskObj -task (Get-ScheduledTask -TaskName $result.taskname.split('\')[-1])
     if (!(Compare-Object -ReferenceObject $object.Values -DifferenceObject $output)) {
-        Get-ScheduledTask -TaskPath $taskPath -TaskName $task.split('\')[-1] | Enable-ScheduledTask > $null
+        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $task.split('\')[-1] | Enable-ScheduledTask > $null
     }
-    else { Get-ScheduledTask -TaskPath $taskPath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null }
+    else { Get-ScheduledTask -TaskPath $output.taskpath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null }
 }
 
 # get the appopriate log events
