@@ -5,7 +5,7 @@ $result = @{
 $taskObj = @{}
 $PATH = "C:\Temp\Windows Protection\"
 #logging
-if (!(Test-Path -Path "$($PATH)") -or !(Test-Path -Path "$($PATH)Allow-tasks.json")) {
+if (!Test-Path -Path "$($PATH)Allow-tasks.json") {
     try {
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ParkHost/Windows_Security_Scripts/master/Check%20SCtask/Create-ScheduleTaskEvent.ps1'))
     }
@@ -92,26 +92,25 @@ Function Lock-ScheduleTask {
     if ($result.taskname -eq '\Action-ScheduleTask') {
         continue
     }
+    # default disable the task
     # try {
-        # $result.State = (Get-ScheduledTask -TaskName $result.taskname.split('\')[-1]).State
-        #Get-ScheduledTask -TaskName $result.taskname.split('\')[-1] # | Disable-ScheduledTask > $null
+    # $result.State = (Get-ScheduledTask -TaskName $result.taskname.split('\')[-1]).State
+    #Get-ScheduledTask -TaskName $result.taskname.split('\')[-1] # | Disable-ScheduledTask > $null
     # }
     # catch {
-        # Throw "Failed to stop or disable the schedule task: $($Error[0])"
+    # Throw "Failed to stop or disable the schedule task: $($Error[0])"
     # }
-    if (!(Test-Path -Path $FilePath)) {
-        Throw 'Failed to find the authorized task list, please rerun the initial setup' + $Error[0]
-    }
-    else {
+    try {
         $file = ConvertFrom-Json -InputObject (Get-Content -Raw -Path $FilePath)
+    } catch {
+        Throw 'Failed to find the authorized task list, please rerun the initial setup' + $Error[0]
     }
     if ($file."$($result.taskname.split('\')[-1])") {
         $current_obj = $file."$($result.taskname.split('\')[-1])"
         $output = @{}
-        foreach ($note in ($current_obj.psobject.Members).Where({ $_.MemberType -eq 'NoteProperty' })) {
+        foreach ($note in ($current_obj.psobject.Members).Where( { $_.MemberType -eq 'NoteProperty' })) {
             $output.add($note.name, $note.value)
         }
-
     }
     else {
         Get-ScheduledTask -TaskPath $taskPath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null
@@ -126,19 +125,13 @@ Function Lock-ScheduleTask {
 
 # get the appopriate log events
 [int]$cevents = 10
-$events = (Get-WinEvent -LogName 'Security' -MaxEvents $cevents).Where( { $_.id -eq '4698' -or $_.id -eq '4699' -or $_.id -eq '4700' -or $_.id -eq '4702' })
-if (!$events) {
-    do {
-        [int]$cevents = ([int]$cevents * 2)
-        $events = (Get-WinEvent -LogName 'Security' -MaxEvents $cevents).Where( { $_.id -eq '4698' -or $_.id -eq '4699' -or $_.id -eq '4700' -or $_.id -eq '4702' })
-    } until ($events)
-}
-$entry = $events[0]
-$result.Date = $entry.TimeCreated
-$result.Id = $entry.Id
+do {
+    $events = (Get-WinEvent -LogName 'Security' -MaxEvents $cevents).Where( { $_.id -eq '4698' -or $_.id -eq '4699' -or $_.id -eq '4700' -or $_.id -eq '4702' })
+    [int]$cevents = ([int]$cevents * 2)
+} until ($events)
 
 # get taskname
-[xml]$xml = $entry.ToXml()
+[xml]$xml = $events[0].ToXml()
 foreach ($row in $xml.Event.EventData.Data.GetEnumerator()) {
     if ($row.Name -eq 'TaskName') {
         if ([string]::IsNullOrEmpty($row.'#text')) {
