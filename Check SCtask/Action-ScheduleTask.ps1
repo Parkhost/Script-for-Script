@@ -53,8 +53,7 @@ Function New-TaskObj {
             }
         }
     }
-    $taskObj[$task.taskname] = $obj
-    return $taskObj
+    return $obj
 }
 
 Function Test-List {
@@ -86,19 +85,11 @@ Function Test-List {
 Function Lock-ScheduleTask {
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory = $true)] [String] $FilePath # 'C:\Temp\PS_Security_features\Check SCtask\allow_tasks.json'
+        [Parameter(Mandatory = $true)] [String] $FilePath
     )
     if ($result.taskname -eq '\Action-ScheduleTask') {
         continue
     }
-    # default disable the task
-    # try {
-    # $result.State = (Get-ScheduledTask -TaskName $result.taskname.split('\')[-1]).State
-    #Get-ScheduledTask -TaskName $result.taskname.split('\')[-1] # | Disable-ScheduledTask > $null
-    # }
-    # catch {
-    # Throw "Failed to stop or disable the schedule task: $($Error[0])"
-    # }
     try {
         $file = ConvertFrom-Json -InputObject (Get-Content -Raw -Path $FilePath)
     }
@@ -111,16 +102,15 @@ Function Lock-ScheduleTask {
         foreach ($note in ($current_obj.psobject.Members).Where( { $_.MemberType -eq 'NoteProperty' })) {
             $output.add($note.name, $note.value)
         }
+        $object = New-TaskObj -task (Get-ScheduledTask -TaskName $result.taskname.split('\')[-1])
+        if (!(Compare-Object -ReferenceObject $object.Values -DifferenceObject $output.Values)) {
+            Get-ScheduledTask -TaskPath $result.taskpath -TaskName $result.taskname.split('\')[-1] | Enable-ScheduledTask > $null
+        }
+        else { Get-ScheduledTask -TaskPath $result.taskpath -TaskName $result.taskname.split('\')[-1] | Disable-ScheduledTask > $null }
     }
     else {
-        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $result.taskname.split('\')[-1] | Disable-ScheduledTask > $null
-        continue
+        Get-ScheduledTask -TaskPath $result.taskpath -TaskName $result.taskname.split('\')[-1] | Disable-ScheduledTask > $null
     }
-    $object = New-TaskObj -task (Get-ScheduledTask -TaskName $result.taskname.split('\')[-1])
-    if (!(Compare-Object -ReferenceObject $object.Values -DifferenceObject $output)) {
-        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $result.taskname.split('\')[-1]| Enable-ScheduledTask > $null
-    }
-    else { Get-ScheduledTask -TaskPath $output.taskpath -TaskName $result.taskname.split('\')[-1] | Disable-ScheduledTask > $null }
 }
 
 # get the appopriate log events
