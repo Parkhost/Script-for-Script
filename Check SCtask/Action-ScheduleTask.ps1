@@ -113,14 +113,14 @@ Function Lock-ScheduleTask {
         }
     }
     else {
-        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null
+        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $result.taskname.split('\')[-1] | Disable-ScheduledTask > $null
         continue
     }
     $object = New-TaskObj -task (Get-ScheduledTask -TaskName $result.taskname.split('\')[-1])
     if (!(Compare-Object -ReferenceObject $object.Values -DifferenceObject $output)) {
-        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $task.split('\')[-1] | Enable-ScheduledTask > $null
+        Get-ScheduledTask -TaskPath $output.taskpath -TaskName $result.taskname.split('\')[-1]| Enable-ScheduledTask > $null
     }
-    else { Get-ScheduledTask -TaskPath $output.taskpath -TaskName $task.split('\')[-1] | Disable-ScheduledTask > $null }
+    else { Get-ScheduledTask -TaskPath $output.taskpath -TaskName $result.taskname.split('\')[-1] | Disable-ScheduledTask > $null }
 }
 
 # get the appopriate log events
@@ -139,6 +139,7 @@ foreach ($row in $xml.Event.EventData.Data.GetEnumerator()) {
         }
         else {
             $result.taskname = $row.'#text'
+            $result.taskPath = ($row.'#text'.subString(0, $row.'#text'.LastIndexOf('\')) + '\')
         }
     }
 }
