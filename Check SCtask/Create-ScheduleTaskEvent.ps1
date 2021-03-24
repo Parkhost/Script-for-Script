@@ -42,7 +42,7 @@ function Get-AllowList {
         [Parameter(Mandatory = $true)] [String] $FilePath
     )
     $params = @{
-        uri     = "https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/tree/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
+        uri     = "https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
         Outfile = "$($PATH)allow_tasks.json"
     }
     Try {
