@@ -35,13 +35,14 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ```
 
 
-## Todo:
+## Todo / Ideas:
 - [x] Preform (automatic) actions to this event
 - [x] Exclusion list of tasks that may always run
 - [x] Auto block without notice - Manage a central allow list on github
     - [x] Auto block on action and arguments
     - [x] Cache - sha checksum
-    - [ ] (Custom) Exclusion list 
+    - [\] (Custom) Exclusion list - clone repo and upload your own allow_tasks.json (see the upload script..)
+
 - [ ] Run a scan to eliminate all 'bad' tasks - or report only...
 - [ ] Upload unauthorized tasks details to database.
 
@@ -49,9 +50,13 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 # CVE Mitre check
 Get all your installed applications with version.
-Do a check against the CVE Mitre database if any known vulnerabilities are present of the specific application with version.
+Do a check against the CVE Mitre database if any known vulnerabilities are present of the specific application and version.
 Give a report back to the user.
 
+already have a bash script to create a mongodb out of Mitre Github.
+Also builded, in one of my previous project, a javascript (native) API around it :\
+I going to rebuild it in Python or Feathersjs.
+
 - [x] Get all application names and version numbers.
-- [ ] Check the data against my CVE database.
-- [ ] Notice user if anything is detected (email or webpage).
+- [ ] Check the data against [Mitre CVE database.](https://cve.mitre.org/)
+- [ ] Notice user if anything is detected.
