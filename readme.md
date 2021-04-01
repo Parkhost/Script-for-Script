@@ -1,13 +1,13 @@
 # Windows - a Script for a Script
 ## Windows 'Protection' scripts
 some basic scripts to try 'counter' the attacks or detects vulnerabilities of your system.
-Trying to make Windows more secure, without eating all the resource which most AV's does..
-
+Attempting to make Windows 10 more secure?
 ---
 
 # Schedule task detection
 Check on event if schedule task is created / updated or enabled.
 Kicks in another script which disables the tasks and checks if it is on the 'allow list'.
+[PoC Source](https://enigma0x3.net/2016/05/25/userland-persistence-with-scheduled-tasks-and-com-handler-hijacking/) Scheduled tasks can be abused to do some peculiar stuff
 
 ### Info
 One of the scheduled tasks gives only a guid back, with no 'human readable' syntax.
@@ -41,7 +41,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 - [x] Auto block without notice - Manage a central allow list on github
     - [x] Auto block on action and arguments
     - [x] Cache - sha checksum
-    - [\] (Custom) Exclusion list - clone repo and upload your own allow_tasks.json (see the upload script..)
+    - [ ] (Custom) Exclusion list - clone repo and upload your own allow_tasks.json (see the upload script..)
 
 - [ ] Run a scan to eliminate all 'bad' tasks - or report only...
 - [ ] Upload unauthorized tasks details to database.
