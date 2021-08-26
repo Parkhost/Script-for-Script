@@ -64,13 +64,13 @@ Function Test-List {
     if (!(Test-Path -Path $FilePath)) {
         Throw "File not found in $($FilePath)"
     }
-    $checksum = (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/master/Check%20SCtask/templates/allow_tasks_checksum.txt').Content
+    $checksum = (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/ParkHost/Script-for-Script/master/Check%20SCtask/templates/allow_tasks_checksum.txt').Content
     if ((Get-Filehash $FilePath).Hash -eq $checksum) {
         continue
     }
     else {
         $params = @{
-            uri     = "https://raw.githubusercontent.com/ParkHost/Windows-Script_for_Script/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
+            uri     = "https://raw.githubusercontent.com/ParkHost/Script-for-Script/master/Check%20SCtask/templates/" + $FilePath.split('\')[-1]
             Outfile = $FilePath
         }
         Try {
